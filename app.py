@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Secret key untuk sesi Flask (server-side)
 app.secret_key = 'lutfifarid'
 
-# Key login admin — disimpan langsung di server (app.py), TIDAK ada di client.
+# Key login admin â€” disimpan langsung di server (app.py), TIDAK ada di client.
 # Ganti nilai ini dengan key rahasia kamu sendiri.
 ADMIN_LOGIN_KEY = 'lutfifarid'
 
@@ -57,7 +57,7 @@ def save_database():
     write_db(data)
     return jsonify({"success": True})
 
-# API validasi login admin — key diperiksa di server, bukan di client
+# API validasi login admin â€” key diperiksa di server, bukan di client
 @app.route('/api/admin_login', methods=['POST'])
 def admin_login():
     data = request.json or {}
@@ -94,4 +94,12 @@ def serve_asset(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # Untuk produksi (PaaS seperti Koyeb/Render): bind ke 0.0.0.0 dan
+    # baca port dari environment variable PORT (disediakan otomatis oleh Koyeb).
+    port = int(os.environ.get('PORT', 8000))
+    # Jalankan memakai Waitress bila tersedia (lebih aman untuk produksi)
+    try:
+        from waitress import serve
+        serve(app, host='0.0.0.0', port=port)
+    except ImportError:
+        app.run(host='0.0.0.0', port=port, debug=False)
