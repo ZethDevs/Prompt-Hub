@@ -6,11 +6,11 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 # Secret key untuk sesi Flask (server-side)
-app.secret_key = 'nathan_secret_key_ultimate'
+app.secret_key = 'lutfifarid'
 
 # Key login admin — disimpan langsung di server (app.py), TIDAK ada di client.
 # Ganti nilai ini dengan key rahasia kamu sendiri.
-ADMIN_LOGIN_KEY = 'nathan_secret_key_ultimate'
+ADMIN_LOGIN_KEY = 'lutfifarid'
 
 # Konfigurasi
 UPLOAD_FOLDER = 'asset'
