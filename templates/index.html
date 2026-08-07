@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PromptHub — Cartoon Edition</title>
+<title>PromptHub — Nathan</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 <link href="https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/500.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/600.css" rel="stylesheet">
@@ -195,7 +195,7 @@ footer .sticker{transform:rotate(1.5deg)}
 
 <!-- ================= TOPBAR ================= -->
 <header class="topbar">
-  <div class="logo"><span class="logo-badge">🎨</span> PromptHub <span class="sticker st-pink">CARTOON ED.</span></div>
+  <div class="logo"><span class="logo-badge">🎨</span> PromptHub <span class="sticker st-pink">By Nathan.</span></div>
   <nav class="navwrap">
     <button class="nav-btn active" data-nav="beranda">🏠 Beranda &amp; Generator</button>
     <button class="nav-btn" data-nav="gallery">🖼️ Inspirasi Gallery</button>
@@ -212,7 +212,7 @@ footer .sticker{transform:rotate(1.5deg)}
 <section class="section active" id="sec-beranda">
   <div class="hero">
     <div>
-      <span class="sticker st-lime">⚡ BUILT FOR CREATORS · LIVE v3.0</span>
+      <span class="sticker st-lime">⚡ BUILT FOR CREATORS · FREE v3.0</span>
       <h1 style="margin-top:16px">Buat kreasi luar biasa dengan <span class="u-wavy">prompt AI terstruktur</span>. 🚀</h1>
       <p>Isi parameter visual, tekan Generate, salin prompt-nya — semudah menggambar kartun!</p>
       <div class="hero-cta">
@@ -232,7 +232,7 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="stat-card"><div class="stat-ico">🧾</div><div><div class="stat-num" id="statPrompt">0</div><div class="stat-label">Prompt Dibuat</div></div></div>
     <div class="stat-card"><div class="stat-ico">🖼️</div><div><div class="stat-num" id="statGallery">0</div><div class="stat-label">Item Gallery</div></div></div>
     <div class="stat-card"><div class="stat-ico">📣</div><div><div class="stat-num" id="statInfo">0</div><div class="stat-label">Pengumuman</div></div></div>
-    <div class="stat-card"><div class="stat-ico">⚡</div><div><div class="stat-num">100%</div><div class="stat-label">Vibe Cartoon</div></div></div>
+    <div class="stat-card"><div class="stat-ico">⚡</div><div><div class="stat-num">100%</div><div class="stat-label">FAST & FREE</div></div></div>
   </div>
 
   <!-- PAPAN INFO -->
@@ -297,7 +297,7 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="stage"><span class="stage-num" style="background:var(--yellow)">01</span><h4>Isi Parameter</h4><p>Lengkapi outfit, pose, latar, kamera &amp; style.</p></div>
     <div class="stage"><span class="stage-num" style="background:var(--pink)">02</span><h4>Generate</h4><p>Prompt dirakit otomatis dengan header realistis.</p></div>
     <div class="stage"><span class="stage-num" style="background:var(--cyan)">03</span><h4>Salin</h4><p>Satu klik, prompt masuk clipboard kamu.</p></div>
-    <div class="stage"><span class="stage-num" style="background:var(--lime)">04</span><h4>Tempel di AI</h4><p>Gunakan di Midjourney, Bing, Gemini, dll. 🎉</p></div>
+    <div class="stage"><span class="stage-num" style="background:var(--lime)">04</span><h4>Tempel di AI</h4><p>Gunakan di ChatGPT, Qwen, Gemini, dll. 🎉</p></div>
   </div>
 </section>
 
@@ -328,6 +328,8 @@ footer .sticker{transform:rotate(1.5deg)}
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
     <button class="nav-btn active tooltab" data-tool="enhancer">✨ Prompt Enhancer</button>
     <button class="nav-btn tooltab" data-tool="img2prompt">🖼️ Image to Prompt</button>
+    <button class="nav-btn tooltab" data-tool="vipduo">👫 VIP Duo</button>
+    <button class="nav-btn tooltab" data-tool="vipsolo">👤 VIP Solo</button>
   </div>
 
   <!-- TOOL: PROMPT ENHANCER -->
@@ -367,6 +369,65 @@ footer .sticker{transform:rotate(1.5deg)}
       <div style="margin-top:12px"><button class="btn btn-sm btn-lime" id="btnI2pCopy">📋 Salin Hasil</button></div>
     </div>
   </div>
+
+  <!-- TOOL: VIP DUO -->
+  <div class="toolpanel" id="panel-vipduo" style="display:none">
+    <div class="card" style="max-width:760px;margin:0 auto">
+      <span class="sticker st-yellow" style="position:absolute;top:-16px;right:18px">👫 VIP DUO</span>
+      <h3 class="u-wavy-lime">VIP Duo — Image to Prompt Couple</h3>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto pasangan (pria &amp; wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus couple dengan header, final style &amp; negative prompt yang otomatis.</p>
+
+      <label class="f-label">🔑 Groq API Key</label>
+      <input type="password" id="inGroqKey3" placeholder="gsk_…">
+      <label class="f-label">👫 Foto Pasangan</label>
+      <input type="file" id="duoFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
+      <div id="duoPreview" style="margin-top:12px;display:none">
+        <img id="duoPreviewEl" alt="preview" style="max-height:280px;width:auto;border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink)">
+      </div>
+
+      <div class="head-note mt" style="margin-top:16px">
+        <b>Format output:</b> Header "Buat Gambar Realistis Dari subjek pria dan wanita tersebut tanpa mengubah wajah" · bagian Outfit / Pose / Latar &amp; Pencahayaan / Pengambilan Gambar menyesuaikan foto · Final Style &amp; Negative Prompt otomatis.
+      </div>
+
+      <div style="margin-top:16px"><button class="btn btn-yellow" id="btnDuoGen">👫 Analisis & Buat Prompt Duo</button></div>
+      <label class="f-label">📄 Hasil Prompt Duo</label>
+      <div class="terminal"><div class="term-head"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span> VIP_DUO_PROMPT.TXT</div>
+        <div class="term-body" id="duoResult">Hasil akan muncul di sini…</div></div>
+      <div style="margin-top:12px"><button class="btn btn-sm btn-lime" id="btnDuoCopy">📋 Salin Hasil</button></div>
+    </div>
+  </div>
+
+  <!-- TOOL: VIP SOLO -->
+  <div class="toolpanel" id="panel-vipsolo" style="display:none">
+    <div class="card" style="max-width:760px;margin:0 auto">
+      <span class="sticker st-cyan" style="position:absolute;top:-16px;right:18px">👤 VIP SOLO</span>
+      <h3 class="u-wavy-cyan">VIP Solo — Image to Prompt Single</h3>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto satu orang (pria/wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus solo dengan header, final style &amp; negative prompt yang otomatis.</p>
+
+      <label class="f-label">🔑 Groq API Key</label>
+      <input type="password" id="inGroqKey4" placeholder="gsk_…">
+      <label class="f-label">👤 Subjek</label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="radio-pill on" data-solo-subj="wanita" onclick="setSoloSubj('wanita')">👩 Wanita</button>
+        <button class="radio-pill" data-solo-subj="pria" onclick="setSoloSubj('pria')">👨 Pria</button>
+      </div>
+      <label class="f-label">🖼️ Foto</label>
+      <input type="file" id="soloFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
+      <div id="soloPreview" style="margin-top:12px;display:none">
+        <img id="soloPreviewEl" alt="preview" style="max-height:280px;width:auto;border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink)">
+      </div>
+
+      <div class="head-note mt" style="margin-top:16px">
+        <b>Format output:</b> Header "Buat Gambar Realistis Dari subjek seorang pria/wanita tersebut tanpa mengubah wajah" · bagian Outfit / Pose / Latar &amp; Pencahayaan / Pengambilan Gambar menyesuaikan foto · Final Style &amp; Negative Prompt otomatis.
+      </div>
+
+      <div style="margin-top:16px"><button class="btn btn-cyan" id="btnSoloGen">👤 Analisis & Buat Prompt Solo</button></div>
+      <label class="f-label">📄 Hasil Prompt Solo</label>
+      <div class="terminal"><div class="term-head"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span> VIP_SOLO_PROMPT.TXT</div>
+        <div class="term-body" id="soloResult">Hasil akan muncul di sini…</div></div>
+      <div style="margin-top:12px"><button class="btn btn-sm btn-lime" id="btnSoloCopy">📋 Salin Hasil</button></div>
+    </div>
+  </div>
 </section>
 
 <!-- ================= ADMIN ================= -->
@@ -375,8 +436,8 @@ footer .sticker{transform:rotate(1.5deg)}
   <div class="card login-card" id="adminLogin">
     <div class="lock">🔐</div>
     <h2 class="u-wavy">Area Terbatas</h2>
-    <p style="font-weight:700;color:#55555f;margin:10px 0 18px">Masukkan Secret Key.</p>
-    <input type="password" id="inSecret" placeholder="Secret key…">
+    <p style="font-weight:700;color:#55555f;margin:10px 0 18px">Masukkan Email Terdaftar.</p>
+    <input type="password" id="inSecret" placeholder="email kamu..">
     <div style="margin-top:16px"><button class="btn btn-yellow" id="btnLogin">🚪 Masuk Sistem</button></div>
   </div>
 
@@ -964,7 +1025,7 @@ async function groqImagePrompt(){
         if(/model|not exist|access/i.test(msg)){ lastErr = msg; continue; }
         throw new Error(msg);
       }
-      return d.choices[0].message.content;
+      return cleanModelOutput(d.choices[0].message.content);
     }catch(err){
       lastErr = err.message;
     }
@@ -982,6 +1043,163 @@ el('btnImg2Prompt').addEventListener('click', async ()=>{
 });
 el('btnI2pCopy').addEventListener('click', async ()=>{
   const txt = el('i2pResult').innerText;
+  if(!txt || txt.includes('…') || txt.startsWith('❌')){ showToast('Belum ada hasil!','err'); return; }
+  await copyText(txt); showToast('Hasil disalin! 📋');
+});
+
+/* ================= VIP DUO ================= */
+const VIP_HEADER = 'Buat Gambar Realistis Dari subjek pria dan wanita tersebut tanpa mengubah wajah';
+const VIP_STYLE = 'Realistis, gaya kamera smartphone iPhone, candid, natural, kehidupan nyata';
+const VIP_NEG = 'worst quality, low quality, lowres, blurry, ugly, distorted, deformed, watermark, text, signature, bad anatomy, bad hands, missing fingers, extra limbs, fused fingers, distorted face, plastic skin, unrealistic reflection';
+el('duoFile').addEventListener('change', ()=>{
+  const f = el('duoFile').files[0];
+  if(!f) return;
+  const rd = new FileReader();
+  rd.onload = ()=>{
+    el('duoPreviewEl').src = rd.result;
+    el('duoPreview').style.display = 'block';
+  };
+  rd.readAsDataURL(f);
+});
+async function groqVipDuo(){
+  const key = (el('inGroqKey3').value||el('inGroqKey').value).trim();
+  const f = el('duoFile').files[0];
+  if(!key){ throw new Error('Groq API Key wajib diisi!'); }
+  if(!f){ throw new Error('Pilih foto pasangan dulu!'); }
+  const b64 = await new Promise(res=>{
+    const rd = new FileReader(); rd.onload=()=>res(rd.result); rd.readAsDataURL(f);
+  });
+  const MODELS = ['openai/gpt-oss-120b', 'qwen/qwen3.6-27b'];
+  let lastErr = null;
+  const sys = `You are an expert AI image prompt engineer. Analyze the couple (pria & wanita) photo and generate a structured Indonesian prompt with EXACTLY these sections filled based on the photo: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Do NOT add a header. Write each section as "Label: detailed description".`;
+  const user = 'Analisis foto pasangan ini. Buatkan 4 bagian deskripsi: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Tulis dalam Bahasa Indonesia, detail, sesuai dengan yang terlihat di foto.';
+  for(const model of MODELS){
+    try{
+      const r = await fetch('https://api.groq.com/openai/v1/chat/completions',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+        body: JSON.stringify({
+          model,
+          messages:[
+            {role:'system',content:sys},
+            {role:'user',content:[{type:'text',text:user},{type:'image_url',image_url:{url:b64}}]}
+          ],
+          temperature:0.5
+        })
+      });
+      const d = await r.json();
+      if(!d.choices){
+        const msg = d.error?.message || 'Gagal';
+        if(/model|not exist|access/i.test(msg)){ lastErr = msg; continue; }
+        throw new Error(msg);
+      }
+      return cleanModelOutput(d.choices[0].message.content);
+    }catch(err){
+      lastErr = err.message;
+    }
+  }
+  throw new Error(lastErr || 'Semua model gagal');
+}
+function cleanModelOutput(raw){
+  let s = String(raw||'');
+  // Hapus blok <think>...</think> (reasoning model)
+  s = s.replace(/<think>[\s\S]*?<\/think>/g, '');
+  // Fallback: hapus jika ada tag think tanpa penutup
+  s = s.replace(/<think>[\s\S]*$/i, '');
+  s = s.trim();
+  return s;
+}
+function wrapVipDuo(body){
+  return VIP_HEADER + '\n\n' + body + '\n\nfinal style : ' + VIP_STYLE + '\n\nnegative prompt : ' + VIP_NEG;
+}
+el('btnDuoGen').addEventListener('click', async ()=>{
+  const btn = el('btnDuoGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis pasangan…';
+  el('duoResult').textContent='Groq sedang menganalisis foto pasangan… 🧠';
+  try{
+    const body = await groqVipDuo();
+    el('duoResult').textContent = wrapVipDuo(body);
+    showToast('Prompt duo berhasil dibuat! 👫');
+  }catch(err){ el('duoResult').textContent='❌ Error: '+err.message; showToast(err.message,'err'); }
+  btn.disabled=false; btn.innerHTML='👫 Analisis & Buat Prompt Duo';
+});
+el('btnDuoCopy').addEventListener('click', async ()=>{
+  const txt = el('duoResult').innerText;
+  if(!txt || txt.includes('…') || txt.startsWith('❌')){ showToast('Belum ada hasil!','err'); return; }
+  await copyText(txt); showToast('Hasil disalin! 📋');
+});
+
+/* ================= VIP SOLO ================= */
+let soloSubj = 'wanita';
+window.setSoloSubj = function(v){
+  soloSubj = v;
+  document.querySelectorAll('[data-solo-subj]').forEach(b=>b.classList.toggle('on', b.dataset.soloSubj===v));
+};
+el('soloFile').addEventListener('change', ()=>{
+  const f = el('soloFile').files[0];
+  if(!f) return;
+  const rd = new FileReader();
+  rd.onload = ()=>{
+    el('soloPreviewEl').src = rd.result;
+    el('soloPreview').style.display = 'block';
+  };
+  rd.readAsDataURL(f);
+});
+async function groqVipSolo(){
+  const key = (el('inGroqKey4').value||el('inGroqKey').value).trim();
+  const f = el('soloFile').files[0];
+  if(!key){ throw new Error('Groq API Key wajib diisi!'); }
+  if(!f){ throw new Error('Pilih foto dulu!'); }
+  const b64 = await new Promise(res=>{
+    const rd = new FileReader(); rd.onload=()=>res(rd.result); rd.readAsDataURL(f);
+  });
+  const MODELS = ['openai/gpt-oss-120b', 'qwen/qwen3.6-27b'];
+  let lastErr = null;
+  const sys = 'You are an expert AI image prompt engineer. Analyze the single-person photo and generate a structured Indonesian prompt with EXACTLY these sections filled based on the photo: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Do NOT add a header. Write each section as "Label: detailed description".';
+  const user = 'Analisis foto satu orang ini. Buatkan 4 bagian deskripsi: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Tulis dalam Bahasa Indonesia, detail, sesuai dengan yang terlihat di foto.';
+  for(const model of MODELS){
+    try{
+      const r = await fetch('https://api.groq.com/openai/v1/chat/completions',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+        body: JSON.stringify({
+          model,
+          messages:[
+            {role:'system',content:sys},
+            {role:'user',content:[{type:'text',text:user},{type:'image_url',image_url:{url:b64}}]}
+          ],
+          temperature:0.5
+        })
+      });
+      const d = await r.json();
+      if(!d.choices){
+        const msg = d.error?.message || 'Gagal';
+        if(/model|not exist|access/i.test(msg)){ lastErr = msg; continue; }
+        throw new Error(msg);
+      }
+      return cleanModelOutput(d.choices[0].message.content);
+    }catch(err){
+      lastErr = err.message;
+    }
+  }
+  throw new Error(lastErr || 'Semua model gagal');
+}
+function wrapVipSolo(body){
+  const subj = soloSubj;
+  const header = 'Buat Gambar Realistis Dari subjek seorang '+subj+' tersebut tanpa mengubah wajah';
+  return header + '\n\n' + body + '\n\nfinal style : ' + VIP_STYLE + '\n\nnegative prompt : ' + VIP_NEG;
+}
+el('btnSoloGen').addEventListener('click', async ()=>{
+  const btn = el('btnSoloGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis foto…';
+  el('soloResult').textContent='Groq sedang menganalisis foto… 🧠';
+  try{
+    const body = await groqVipSolo();
+    el('soloResult').textContent = wrapVipSolo(body);
+    showToast('Prompt solo berhasil dibuat! 👤');
+  }catch(err){ el('soloResult').textContent='❌ Error: '+err.message; showToast(err.message,'err'); }
+  btn.disabled=false; btn.innerHTML='👤 Analisis & Buat Prompt Solo';
+});
+el('btnSoloCopy').addEventListener('click', async ()=>{
+  const txt = el('soloResult').innerText;
   if(!txt || txt.includes('…') || txt.startsWith('❌')){ showToast('Belum ada hasil!','err'); return; }
   await copyText(txt); showToast('Hasil disalin! 📋');
 });
