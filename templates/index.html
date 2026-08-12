@@ -320,9 +320,9 @@ footer .sticker{transform:rotate(1.5deg)}
 <section class="section" id="sec-tools">
   <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
     <h2 class="u-wavy">🧰 AI Tools</h2>
-    <span class="sticker st-purple">GROQ POWERED</span>
+    <span class="sticker st-purple">GEMINI POWERED</span>
   </div>
-  <p style="margin:12px 0 20px;font-weight:700;color:#55555f">Bantuan AI dalam satu tempat: perkaya prompt atau ubah foto menjadi prompt menggunakan Groq AI.</p>
+  <p style="margin:12px 0 20px;font-weight:700;color:#55555f">Bantuan AI dalam satu tempat: perkaya prompt atau ubah foto menjadi prompt menggunakan Gemini AI.</p>
 
   <!-- TAB TOOLS -->
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
@@ -337,8 +337,8 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-pink" style="position:absolute;top:-16px;right:18px">✨ ENHANCER</span>
       <h3 class="u-wavy">AI Prompt Enhancer</h3>
-      <label class="f-label">🔑 Groq API Key</label>
-      <input type="password" id="inGroqKey" placeholder="gsk_…">
+      <label class="f-label">🔑 Gemini API Key</label>
+      <input type="password" id="inGeminiKey" placeholder="AIza…">
       <label class="f-label">💡 Ide Prompt (ID/EN)</label>
       <textarea id="inIdea" placeholder="Contoh: kucing astronot di bulan…"></textarea>
       <div style="margin-top:16px"><button class="btn btn-pink" id="btnEnhance">🚀 Enhance dengan AI</button></div>
@@ -354,9 +354,9 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-cyan" style="position:absolute;top:-16px;right:18px">🖼️ IMG→PROMPT</span>
       <h3 class="u-wavy-cyan">Image to Prompt</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto, lalu Groq AI akan menganalisisnya dan membuat prompt gambar yang detail (subjek, outfit, pose, latar, pencahayaan, gaya).</p>
-      <label class="f-label">🔑 Groq API Key</label>
-      <input type="password" id="inGroqKey2" placeholder="gsk_…">
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto, lalu Gemini AI akan menganalisisnya dan membuat prompt gambar yang detail (subjek, outfit, pose, latar, pencahayaan, gaya).</p>
+      <label class="f-label">🔑 Gemini API Key</label>
+      <input type="password" id="inGeminiKey2" placeholder="AIza…">
       <label class="f-label">🖼️ Foto</label>
       <input type="file" id="imgFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
       <div id="imgPreview" style="margin-top:12px;display:none">
@@ -375,10 +375,10 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-yellow" style="position:absolute;top:-16px;right:18px">👫 VIP DUO</span>
       <h3 class="u-wavy-lime">VIP Duo — Image to Prompt Couple</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto pasangan (pria &amp; wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus couple dengan header, final style &amp; negative prompt yang otomatis.</p>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto pasangan (pria &amp; wanita), lalu Gemini AI akan menganalisisnya dan membuat prompt berformat khusus couple dengan header, final style &amp; negative prompt yang otomatis.</p>
 
-      <label class="f-label">🔑 Groq API Key</label>
-      <input type="password" id="inGroqKey3" placeholder="gsk_…">
+      <label class="f-label">🔑 Gemini API Key</label>
+      <input type="password" id="inGeminiKey3" placeholder="AIza…">
       <label class="f-label">👫 Foto Pasangan</label>
       <input type="file" id="duoFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
       <div id="duoPreview" style="margin-top:12px;display:none">
@@ -402,10 +402,10 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-cyan" style="position:absolute;top:-16px;right:18px">👤 VIP SOLO</span>
       <h3 class="u-wavy-cyan">VIP Solo — Image to Prompt Single</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto satu orang (pria/wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus solo dengan header, final style &amp; negative prompt yang otomatis.</p>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto satu orang (pria/wanita), lalu Gemini AI akan menganalisisnya dan membuat prompt berformat khusus solo dengan header, final style &amp; negative prompt yang otomatis.</p>
 
-      <label class="f-label">🔑 Groq API Key</label>
-      <input type="password" id="inGroqKey4" placeholder="gsk_…">
+      <label class="f-label">🔑 Gemini API Key</label>
+      <input type="password" id="inGeminiKey4" placeholder="AIza…">
       <label class="f-label">👤 Subjek</label>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <button class="radio-pill on" data-solo-subj="wanita" onclick="setSoloSubj('wanita')">👩 Wanita</button>
@@ -793,7 +793,7 @@ function buildSoloPrompt(f, neg){
   const push=(label,val)=>{ if(val) lines.push('', label+' : '+val); };
   push('Outfit', f.gOutfit);
   push('Pose', f.gPose);
-  push('latarbelakang dan pencahayaan', f.gBg);
+  push('latar belakang dan pencahayaan', f.gBg);
   push('pengambilan gambar', f.gCam);
   push('final style', f.gStyle);
   if(neg) lines.push('', 'negative prompt : '+neg);
@@ -940,40 +940,18 @@ document.addEventListener('keydown', e=>{
 el('btnGmClose').addEventListener('click', ()=>{ el('gModal').classList.remove('show'); el('gmMedia').innerHTML=''; el('gmNav').style.display='none'; });
 el('gModal').addEventListener('click', e=>{ if(e.target===el('gModal')){ el('gModal').classList.remove('show'); el('gmMedia').innerHTML=''; el('gmNav').style.display='none'; } });
 
-/* ================= ENHANCER ================= */
-el('btnEnhance').addEventListener('click', async ()=>{
-  const key = el('inGroqKey').value.trim(), idea = el('inIdea').value.trim();
-  if(!key || !idea){ showToast('API key & ide wajib diisi!','err'); return; }
-  const btn = el('btnEnhance'); btn.disabled = true; btn.textContent = '⏳ Meng-enhance…';
-  el('enhResult').textContent = 'Berpikir… 🤔';
-  try{
-    const r = await fetch('https://api.groq.com/openai/v1/chat/completions',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
-      body: JSON.stringify({
-        model:'llama-3.1-8b-instant',
-        messages:[
-          {role:'system',content:'You are an expert AI image prompt engineer. Expand the user\'s simple idea into a rich, detailed English image-generation prompt (subject, outfit, pose, environment, lighting, camera, style, negative prompts). Output the prompt only.'},
-          {role:'user',content:idea}
-        ],
-        temperature:0.8
-      })
-    });
-    const d = await r.json();
-    if(!d.choices){ throw new Error(d.error?.message || 'Gagal'); }
-    el('enhResult').textContent = d.choices[0].message.content;
-    showToast('Enhance berhasil! ✨');
-  }catch(err){
-    el('enhResult').textContent = '❌ Error: ' + err.message;
-    showToast('Gagal menghubungi Groq!','err');
-  }
-  btn.disabled = false; btn.innerHTML = '🚀 Enhance dengan AI';
-});
-el('btnEnhCopy').addEventListener('click', async ()=>{
-  const txt = el('enhResult').innerText;
-  if(!txt || txt.includes('…')){ showToast('Belum ada hasil!','err'); return; }
-  await copyText(txt); showToast('Hasil disalin! 📋');
-});
+/* ================= CLEANSING UTILS ================= */
+function cleanModelOutput(raw){
+  let s = String(raw||'');
+  s = s.replace(/<think>[\s\S]*?<\/think>/g, '');
+  s = s.replace(/<think>[\s\S]*$/i, '');
+  s = s.replace(/\*\*/g, '');
+  s = s.replace(/\*/g, '');
+  s = s.replace(/```[a-z]*\n?/g, ''); 
+  s = s.replace(/```/g, '');
+  s = s.trim();
+  return s;
+}
 
 /* ================= AI TOOLS TABS ================= */
 document.querySelectorAll('.tooltab').forEach(tb=>tb.addEventListener('click', ()=>{
@@ -982,6 +960,40 @@ document.querySelectorAll('.tooltab').forEach(tb=>tb.addEventListener('click', (
   document.querySelectorAll('.toolpanel').forEach(p=>p.style.display='none');
   el('panel-'+tb.dataset.tool).style.display='block';
 }));
+
+/* ================= ENHANCER ================= */
+el('btnEnhance').addEventListener('click', async ()=>{
+  const key = el('inGeminiKey').value.trim(), idea = el('inIdea').value.trim();
+  if(!key || !idea){ showToast('API key & ide wajib diisi!','err'); return; }
+  const btn = el('btnEnhance'); btn.disabled = true; btn.textContent = '⏳ Meng-enhance…';
+  el('enhResult').textContent = 'Berpikir… 🤔';
+  try{
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: "You are an expert AI image prompt engineer. Expand the user's simple idea into a rich, detailed English image-generation prompt (subject, outfit, pose, environment, lighting, camera, style, negative prompts). Output the prompt only, no markdown, no conversational text." }] },
+        contents: [{ parts: [{ text: idea }] }],
+        generationConfig: { temperature: 0.8 }
+      })
+    });
+    const d = await r.json();
+    if(d.error) throw new Error(d.error.message || 'Gagal');
+    if(!d.candidates || !d.candidates[0].content) throw new Error("Terblokir oleh safety filter atau response kosong.");
+    
+    el('enhResult').textContent = cleanModelOutput(d.candidates[0].content.parts[0].text);
+    showToast('Enhance berhasil! ✨');
+  }catch(err){
+    el('enhResult').textContent = '❌ Error: ' + err.message;
+    showToast('Gagal menghubungi Gemini!','err');
+  }
+  btn.disabled = false; btn.innerHTML = '🚀 Enhance dengan AI';
+});
+el('btnEnhCopy').addEventListener('click', async ()=>{
+  const txt = el('enhResult').innerText;
+  if(!txt || txt.includes('…')){ showToast('Belum ada hasil!','err'); return; }
+  await copyText(txt); showToast('Hasil disalin! 📋');
+});
 
 /* ================= IMAGE TO PROMPT ================= */
 el('imgFile').addEventListener('change', ()=>{
@@ -994,49 +1006,42 @@ el('imgFile').addEventListener('change', ()=>{
   };
   rd.readAsDataURL(f);
 });
-async function groqImagePrompt(){
-  const key = (el('inGroqKey2').value||el('inGroqKey').value).trim();
+
+async function geminiImagePrompt(){
+  const key = (el('inGeminiKey2').value||el('inGeminiKey').value).trim();
   const f = el('imgFile').files[0];
-  if(!key){ throw new Error('Groq API Key wajib diisi!'); }
+  if(!key){ throw new Error('Gemini API Key wajib diisi!'); }
   if(!f){ throw new Error('Pilih foto dulu!'); }
   const b64 = await new Promise(res=>{
-    const rd = new FileReader(); rd.onload=()=>res(rd.result); rd.readAsDataURL(f);
+    const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
   });
-  const MODELS = ['openai/gpt-oss-120b', 'qwen/qwen3.6-27b'];
-  let lastErr = null;
-  for(const model of MODELS){
-    try{
-      const r = await fetch('https://api.groq.com/openai/v1/chat/completions',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
-        body: JSON.stringify({
-          model,
-          messages:[
-            {role:'system',content:'You are an expert AI image prompt engineer. Analyze the image and write a detailed, structured image-generation prompt in Indonesian, covering: subjek, outfit/pakaian, pose & ekspresi, latar belakang & pencahayaan, pengambilan gambar/kamera, dan final style. Output the prompt only.'},
-            {role:'user',content:[{type:'text',text:'Analisis foto ini dan buatkan prompt gambar yang lengkap dan detail dalam Bahasa Indonesia.'},{type:'image_url',image_url:{url:b64}}]}
-          ],
-          temperature:0.5
-        })
-      });
-      const d = await r.json();
-      if(!d.choices){
-        const msg = d.error?.message || 'Gagal';
-        // fallback bila model tidak tersedia/tidak ada akses
-        if(/model|not exist|access/i.test(msg)){ lastErr = msg; continue; }
-        throw new Error(msg);
-      }
-      return cleanModelOutput(d.choices[0].message.content);
-    }catch(err){
-      lastErr = err.message;
-    }
-  }
-  throw new Error(lastErr || 'Semua model gagal');
+  
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: "You are an expert AI image prompt engineer. Analyze the image and write a detailed, structured image-generation prompt in Indonesian, covering: subjek, outfit/pakaian, pose & ekspresi, latar belakang & pencahayaan, pengambilan gambar/kamera, dan final style. Output the prompt only, without markdown." }] },
+      contents: [{
+        parts: [
+          { text: "Analisis foto ini dan buatkan prompt gambar yang lengkap dan detail dalam Bahasa Indonesia." },
+          { inlineData: { mimeType: f.type, data: b64 } }
+        ]
+      }],
+      generationConfig: { temperature: 0.5 }
+    })
+  });
+  const d = await r.json();
+  if(d.error) throw new Error(d.error.message || 'Gagal');
+  if(!d.candidates || !d.candidates[0].content) throw new Error("Terblokir oleh safety filter atau response kosong.");
+  
+  return cleanModelOutput(d.candidates[0].content.parts[0].text);
 }
+
 el('btnImg2Prompt').addEventListener('click', async ()=>{
   const btn = el('btnImg2Prompt'); btn.disabled=true; btn.textContent='⏳ Menganalisis foto…';
-  el('i2pResult').textContent='Groq sedang menganalisis foto… 🧠';
+  el('i2pResult').textContent='Gemini sedang menganalisis foto… 🧠';
   try{
-    el('i2pResult').textContent = await groqImagePrompt();
+    el('i2pResult').textContent = await geminiImagePrompt();
     showToast('Prompt berhasil dibuat! 🖼️');
   }catch(err){ el('i2pResult').textContent='❌ Error: '+err.message; showToast(err.message,'err'); }
   btn.disabled=false; btn.innerHTML='🔍 Analisis & Buat Prompt';
@@ -1048,9 +1053,9 @@ el('btnI2pCopy').addEventListener('click', async ()=>{
 });
 
 /* ================= VIP DUO ================= */
-const VIP_HEADER = 'Buat Gambar Realistis Dari subjek pria dan wanita tersebut tanpa mengubah wajah';
 const VIP_STYLE = 'Realistis, gaya kamera smartphone iPhone, candid, natural, kehidupan nyata';
 const VIP_NEG = 'worst quality, low quality, lowres, blurry, ugly, distorted, deformed, watermark, text, signature, bad anatomy, bad hands, missing fingers, extra limbs, fused fingers, distorted face, plastic skin, unrealistic reflection';
+
 el('duoFile').addEventListener('change', ()=>{
   const f = el('duoFile').files[0];
   if(!f) return;
@@ -1061,62 +1066,49 @@ el('duoFile').addEventListener('change', ()=>{
   };
   rd.readAsDataURL(f);
 });
-async function groqVipDuo(){
-  const key = (el('inGroqKey3').value||el('inGroqKey').value).trim();
+
+async function geminiVipDuo(){
+  const key = (el('inGeminiKey3').value||el('inGeminiKey').value).trim();
   const f = el('duoFile').files[0];
-  if(!key){ throw new Error('Groq API Key wajib diisi!'); }
+  if(!key){ throw new Error('Gemini API Key wajib diisi!'); }
   if(!f){ throw new Error('Pilih foto pasangan dulu!'); }
   const b64 = await new Promise(res=>{
-    const rd = new FileReader(); rd.onload=()=>res(rd.result); rd.readAsDataURL(f);
+    const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
   });
-  const MODELS = ['openai/gpt-oss-120b', 'qwen/qwen3.6-27b'];
-  let lastErr = null;
-  const sys = `You are an expert AI image prompt engineer. Analyze the couple (pria & wanita) photo and generate a structured Indonesian prompt with EXACTLY these sections filled based on the photo: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Do NOT add a header. Write each section as "Label: detailed description".`;
-  const user = 'Analisis foto pasangan ini. Buatkan 4 bagian deskripsi: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Tulis dalam Bahasa Indonesia, detail, sesuai dengan yang terlihat di foto.';
-  for(const model of MODELS){
-    try{
-      const r = await fetch('https://api.groq.com/openai/v1/chat/completions',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
-        body: JSON.stringify({
-          model,
-          messages:[
-            {role:'system',content:sys},
-            {role:'user',content:[{type:'text',text:user},{type:'image_url',image_url:{url:b64}}]}
-          ],
-          temperature:0.5
-        })
-      });
-      const d = await r.json();
-      if(!d.choices){
-        const msg = d.error?.message || 'Gagal';
-        if(/model|not exist|access/i.test(msg)){ lastErr = msg; continue; }
-        throw new Error(msg);
-      }
-      return cleanModelOutput(d.choices[0].message.content);
-    }catch(err){
-      lastErr = err.message;
-    }
-  }
-  throw new Error(lastErr || 'Semua model gagal');
+  
+  const sys = 'You are an expert AI image prompt engineer. Analyze the couple (pria & wanita) photo and generate a structured Indonesian prompt based on the photo. Do NOT add a header. Do NOT use markdown. Output ONLY the following format with exactly these labels:\n\nOutfit : [deskripsi]\n\nPose : [deskripsi]\n\nlatar belakang dan pencahayaan : [deskripsi]\n\npengambilan gambar : [deskripsi]';
+  const user = 'Analisis foto pasangan ini. Buatkan 4 bagian deskripsi sesuai format persis tanpa tambahan kata.';
+  
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: sys }] },
+      contents: [{
+        parts: [
+          { text: user },
+          { inlineData: { mimeType: f.type, data: b64 } }
+        ]
+      }],
+      generationConfig: { temperature: 0.5 }
+    })
+  });
+  const d = await r.json();
+  if(d.error) throw new Error(d.error.message || 'Gagal');
+  if(!d.candidates || !d.candidates[0].content) throw new Error("Terblokir oleh safety filter atau response kosong.");
+  
+  return cleanModelOutput(d.candidates[0].content.parts[0].text);
 }
-function cleanModelOutput(raw){
-  let s = String(raw||'');
-  // Hapus blok <think>...</think> (reasoning model)
-  s = s.replace(/<think>[\s\S]*?<\/think>/g, '');
-  // Fallback: hapus jika ada tag think tanpa penutup
-  s = s.replace(/<think>[\s\S]*$/i, '');
-  s = s.trim();
-  return s;
-}
+
 function wrapVipDuo(body){
-  return VIP_HEADER + '\n\n' + body + '\n\nfinal style : ' + VIP_STYLE + '\n\nnegative prompt : ' + VIP_NEG;
+  return HEADER_PROMPT + '\n\n' + body + '\n\nfinal style : ' + VIP_STYLE + '\n\nnegative prompt : ' + VIP_NEG;
 }
+
 el('btnDuoGen').addEventListener('click', async ()=>{
   const btn = el('btnDuoGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis pasangan…';
-  el('duoResult').textContent='Groq sedang menganalisis foto pasangan… 🧠';
+  el('duoResult').textContent='Gemini sedang menganalisis foto pasangan… 🧠';
   try{
-    const body = await groqVipDuo();
+    const body = await geminiVipDuo();
     el('duoResult').textContent = wrapVipDuo(body);
     showToast('Prompt duo berhasil dibuat! 👫');
   }catch(err){ el('duoResult').textContent='❌ Error: '+err.message; showToast(err.message,'err'); }
@@ -1144,55 +1136,51 @@ el('soloFile').addEventListener('change', ()=>{
   };
   rd.readAsDataURL(f);
 });
-async function groqVipSolo(){
-  const key = (el('inGroqKey4').value||el('inGroqKey').value).trim();
+
+async function geminiVipSolo(){
+  const key = (el('inGeminiKey4').value||el('inGeminiKey').value).trim();
   const f = el('soloFile').files[0];
-  if(!key){ throw new Error('Groq API Key wajib diisi!'); }
+  if(!key){ throw new Error('Gemini API Key wajib diisi!'); }
   if(!f){ throw new Error('Pilih foto dulu!'); }
   const b64 = await new Promise(res=>{
-    const rd = new FileReader(); rd.onload=()=>res(rd.result); rd.readAsDataURL(f);
+    const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
   });
-  const MODELS = ['openai/gpt-oss-120b', 'qwen/qwen3.6-27b'];
-  let lastErr = null;
-  const sys = 'You are an expert AI image prompt engineer. Analyze the single-person photo and generate a structured Indonesian prompt with EXACTLY these sections filled based on the photo: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Do NOT add a header. Write each section as "Label: detailed description".';
-  const user = 'Analisis foto satu orang ini. Buatkan 4 bagian deskripsi: Outfit, Pose, latarbelakang dan pencahayaan, pengambilan gambar. Tulis dalam Bahasa Indonesia, detail, sesuai dengan yang terlihat di foto.';
-  for(const model of MODELS){
-    try{
-      const r = await fetch('https://api.groq.com/openai/v1/chat/completions',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
-        body: JSON.stringify({
-          model,
-          messages:[
-            {role:'system',content:sys},
-            {role:'user',content:[{type:'text',text:user},{type:'image_url',image_url:{url:b64}}]}
-          ],
-          temperature:0.5
-        })
-      });
-      const d = await r.json();
-      if(!d.choices){
-        const msg = d.error?.message || 'Gagal';
-        if(/model|not exist|access/i.test(msg)){ lastErr = msg; continue; }
-        throw new Error(msg);
-      }
-      return cleanModelOutput(d.choices[0].message.content);
-    }catch(err){
-      lastErr = err.message;
-    }
-  }
-  throw new Error(lastErr || 'Semua model gagal');
+  
+  const sys = 'You are an expert AI image prompt engineer. Analyze the single-person photo and generate a structured Indonesian prompt based on the photo. Do NOT add a header. Do NOT use markdown. Output ONLY the following format with exactly these labels:\n\nOutfit : [deskripsi]\n\nPose : [deskripsi]\n\nlatar belakang dan pencahayaan : [deskripsi]\n\npengambilan gambar : [deskripsi]';
+  const user = 'Analisis foto satu orang ini. Buatkan 4 bagian deskripsi sesuai format persis tanpa tambahan kata.';
+  
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: sys }] },
+      contents: [{
+        parts: [
+          { text: user },
+          { inlineData: { mimeType: f.type, data: b64 } }
+        ]
+      }],
+      generationConfig: { temperature: 0.5 }
+    })
+  });
+  const d = await r.json();
+  if(d.error) throw new Error(d.error.message || 'Gagal');
+  if(!d.candidates || !d.candidates[0].content) throw new Error("Terblokir oleh safety filter atau response kosong.");
+  
+  return cleanModelOutput(d.candidates[0].content.parts[0].text);
 }
+
 function wrapVipSolo(body){
   const subj = soloSubj;
   const header = 'Buat Gambar Realistis Dari subjek seorang '+subj+' tersebut tanpa mengubah wajah';
   return header + '\n\n' + body + '\n\nfinal style : ' + VIP_STYLE + '\n\nnegative prompt : ' + VIP_NEG;
 }
+
 el('btnSoloGen').addEventListener('click', async ()=>{
   const btn = el('btnSoloGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis foto…';
-  el('soloResult').textContent='Groq sedang menganalisis foto… 🧠';
+  el('soloResult').textContent='Gemini sedang menganalisis foto… 🧠';
   try{
-    const body = await groqVipSolo();
+    const body = await geminiVipSolo();
     el('soloResult').textContent = wrapVipSolo(body);
     showToast('Prompt solo berhasil dibuat! 👤');
   }catch(err){ el('soloResult').textContent='❌ Error: '+err.message; showToast(err.message,'err'); }
@@ -1459,3 +1447,4 @@ loadDB();
 </script>
 </body>
 </html>
+
