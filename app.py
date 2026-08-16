@@ -6,19 +6,24 @@ import urllib.error
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from werkzeug.utils import secure_filename
 from pymongo import MongoClient
+from dotenv import load_dotenv
+
+# Memuat variabel lingkungan dari file .env jika tersedia (untuk pengujian lokal)
+load_dotenv()
 
 # ==============================================================================
-# KONFIGURASI SERVER
+# KONFIGURASI SERVER DARI ENVIRONMENT VARIABLES
 # ==============================================================================
-SECRET_KEY = 'lutfifarid'
-ADMIN_LOGIN_KEY = 'lutfifarid'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'nathanvipkey')
+ADMIN_LOGIN_KEY = os.environ.get('ADMIN_LOGIN_KEY', 'lutfifarid')
 
-# API Key Gemini diambil dari Environment Variable Koyeb agar tidak terkena banned GitHub
-GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
+# API Key Gemini diambil dari Environment Variables Koyeb / .env
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '').strip()
 
-# Konfigurasi MongoDB & Cloudinary
-MONGO_URI = os.environ.get('MONGO_URI', 'mongodb+srv://lutfi:lutfi@cluster0.pa62uis.mongodb.net/prompthub?appName=Cluster0')
-CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL', 'cloudinary://884358532769249:8oJlR7ej55G7Tszt1qKcSxqBiyg@jjin8nez')
+# Konfigurasi MongoDB, Cloudinary, & WhatsApp
+MONGO_URI = os.environ.get('MONGO_URI', '').strip()
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL', '').strip()
+WA_NUMBER = os.environ.get('WA_NUMBER', '6281234567890').strip()
 
 UPLOAD_FOLDER = 'asset'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp', 'mp4', 'webm', 'mov'}
@@ -33,11 +38,11 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 # Inisialisasi Cloudinary
 cloudinary_available = False
-if CLOUDINARY_URL.strip():
+if CLOUDINARY_URL:
     try:
         import cloudinary
         import cloudinary.uploader
-        cloudinary.config(cloudinary_url=CLOUDINARY_URL.strip())
+        cloudinary.config(cloudinary_url=CLOUDINARY_URL)
         cloudinary_available = True
     except Exception as e:
         print("Gagal konfigurasi Cloudinary:", e)
@@ -45,15 +50,18 @@ if CLOUDINARY_URL.strip():
 # Inisialisasi MongoDB Client
 mongo_client = None
 db = None
-try:
-    mongo_client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=4000)
-    mongo_client.admin.command('ping')
-    db_name = mongo_client.get_database().name
-    db = mongo_client.get_database() if db_name else mongo_client['prompthub']
-    print("MongoDB Connected!")
-except Exception as e:
-    print("MongoDB Fallback ke database.txt:", e)
-    db = None
+if MONGO_URI:
+    try:
+        mongo_client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=4000)
+        mongo_client.admin.command('ping')
+        db_name = mongo_client.get_database().name
+        db = mongo_client.get_database() if db_name else mongo_client['prompthub']
+        print("MongoDB Connected!")
+    except Exception as e:
+        print("MongoDB Fallback ke database.txt:", e)
+        db = None
+else:
+    print("MONGO_URI tidak ditemukan di Environment Variables, fallback ke database.txt")
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -100,17 +108,14 @@ def write_db(data):
         json.dump(data, f, indent=4)
 
 # ================= HELPER PEMANGGILAN GEMINI API =================
-# Ganti fungsi call_gemini di app.py dengan versi berikut:
-
 def call_gemini(payload):
-    key = GEMINI_API_KEY.strip()
+    key = GEMINI_API_KEY
     if not key:
-        raise Exception("GEMINI_API_KEY belum disetel di Environment Variables Koyeb!")
+        raise Exception("GEMINI_API_KEY belum disetel pada Environment Variables Koyeb / .env!")
         
     url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
     req_data = json.dumps(payload).encode('utf-8')
     
-    # Mengirim API Key via header resmi x-goog-api-key
     headers = {
         'Content-Type': 'application/json',
         'x-goog-api-key': key
@@ -133,11 +138,10 @@ def call_gemini(payload):
         except json.JSONDecodeError:
             raise Exception(f"HTTP Error {e.code}: {e.reason}")
 
-
 # ================= ROUTES =================
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', wa_number=WA_NUMBER)
 
 @app.route('/api/database', methods=['GET'])
 def get_database():

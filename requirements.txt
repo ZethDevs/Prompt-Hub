@@ -3,3 +3,4 @@ waitress==3.0.2
 pymongo==4.11.2
 dnspython==2.7.0
 cloudinary==1.42.0
+python-dotenv==1.0.1
