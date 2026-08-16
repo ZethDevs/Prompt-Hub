@@ -129,7 +129,7 @@ textarea{resize:vertical;min-height:84px}
 .term-body .cursor{display:inline-block;width:9px;height:16px;background:var(--lime);animation:blink 1s steps(1) infinite;vertical-align:middle}
 @keyframes blink{50%{opacity:0}}
 
-/* Light prompt box (gallery) — tetap terbaca di mode gelap */
+/* Light prompt box (gallery) */
 .term-light{background:#fff;color:#1e293b;border:3px solid var(--ink);border-radius:12px;padding:16px;min-height:90px;max-height:320px;overflow:auto;font-family:ui-monospace,Consolas,monospace;font-size:.92rem;line-height:1.7;white-space:pre-wrap}
 
 /* ============ GALLERY ============ */
@@ -292,7 +292,7 @@ footer .sticker{transform:rotate(1.5deg)}
     </div>
   </div>
 
-  <!-- STAGES ala zelapi -->
+  <!-- STAGES -->
   <div class="grid-4 mt" style="margin-top:44px">
     <div class="stage"><span class="stage-num" style="background:var(--yellow)">01</span><h4>Isi Parameter</h4><p>Lengkapi outfit, pose, latar, kamera &amp; style.</p></div>
     <div class="stage"><span class="stage-num" style="background:var(--pink)">02</span><h4>Generate</h4><p>Prompt dirakit otomatis dengan header realistis.</p></div>
@@ -320,9 +320,9 @@ footer .sticker{transform:rotate(1.5deg)}
 <section class="section" id="sec-tools">
   <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
     <h2 class="u-wavy">🧰 AI Tools</h2>
-    <span class="sticker st-purple">GEMINI POWERED</span>
+    <span class="sticker st-purple">AI POWERED</span>
   </div>
-  <p style="margin:12px 0 20px;font-weight:700;color:#55555f">Bantuan AI dalam satu tempat: perkaya prompt atau ubah foto menjadi prompt menggunakan Gemini AI.</p>
+  <p style="margin:12px 0 20px;font-weight:700;color:#55555f">Bantuan AI dalam satu tempat: perkaya prompt atau ubah foto menjadi prompt menggunakan AI Engine bawaan server.</p>
 
   <!-- TAB TOOLS -->
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
@@ -337,8 +337,6 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-pink" style="position:absolute;top:-16px;right:18px">✨ ENHANCER</span>
       <h3 class="u-wavy">AI Prompt Enhancer</h3>
-      <label class="f-label">🔑 Gemini API Key</label>
-      <input type="password" id="inGeminiKey" placeholder="AIza…">
       <label class="f-label">💡 Ide Prompt (ID/EN)</label>
       <textarea id="inIdea" placeholder="Contoh: kucing astronot di bulan…"></textarea>
       <div style="margin-top:16px"><button class="btn btn-pink" id="btnEnhance">🚀 Enhance dengan AI</button></div>
@@ -354,9 +352,7 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-cyan" style="position:absolute;top:-16px;right:18px">🖼️ IMG→PROMPT</span>
       <h3 class="u-wavy-cyan">Image to Prompt</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto, lalu Gemini AI akan menganalisisnya dan membuat prompt gambar yang detail (subjek, outfit, pose, latar, pencahayaan, gaya).</p>
-      <label class="f-label">🔑 Gemini API Key</label>
-      <input type="password" id="inGeminiKey2" placeholder="AIza…">
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto, lalu AI akan menganalisisnya dan membuat prompt gambar yang detail (subjek, outfit, pose, latar, pencahayaan, gaya).</p>
       <label class="f-label">🖼️ Foto</label>
       <input type="file" id="imgFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
       <div id="imgPreview" style="margin-top:12px;display:none">
@@ -375,10 +371,8 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-yellow" style="position:absolute;top:-16px;right:18px">👫 VIP DUO</span>
       <h3 class="u-wavy-lime">VIP Duo — Image to Prompt Couple</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto pasangan (pria &amp; wanita), lalu Gemini AI akan menganalisisnya dan membuat prompt berformat khusus couple dengan header, final style &amp; negative prompt yang otomatis.</p>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto pasangan (pria &amp; wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus couple dengan header, final style &amp; negative prompt yang otomatis.</p>
 
-      <label class="f-label">🔑 Gemini API Key</label>
-      <input type="password" id="inGeminiKey3" placeholder="AIza…">
       <label class="f-label">👫 Foto Pasangan</label>
       <input type="file" id="duoFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
       <div id="duoPreview" style="margin-top:12px;display:none">
@@ -402,10 +396,8 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-cyan" style="position:absolute;top:-16px;right:18px">👤 VIP SOLO</span>
       <h3 class="u-wavy-cyan">VIP Solo — Image to Prompt Single</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto satu orang (pria/wanita), lalu Gemini AI akan menganalisisnya dan membuat prompt berformat khusus solo dengan header, final style &amp; negative prompt yang otomatis.</p>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto satu orang (pria/wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus solo dengan header, final style &amp; negative prompt yang otomatis.</p>
 
-      <label class="f-label">🔑 Gemini API Key</label>
-      <input type="password" id="inGeminiKey4" placeholder="AIza…">
       <label class="f-label">👤 Subjek</label>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <button class="radio-pill on" data-solo-subj="wanita" onclick="setSoloSubj('wanita')">👩 Wanita</button>
@@ -436,8 +428,8 @@ footer .sticker{transform:rotate(1.5deg)}
   <div class="card login-card" id="adminLogin">
     <div class="lock">🔐</div>
     <h2 class="u-wavy">Area Terbatas</h2>
-    <p style="font-weight:700;color:#55555f;margin:10px 0 18px">Masukkan Email Terdaftar.</p>
-    <input type="password" id="inSecret" placeholder="email kamu..">
+    <p style="font-weight:700;color:#55555f;margin:10px 0 18px">Masukkan Secret Key Admin.</p>
+    <input type="password" id="inSecret" placeholder="Secret Key admin kamu..">
     <div style="margin-top:16px"><button class="btn btn-yellow" id="btnLogin">🚪 Masuk Sistem</button></div>
   </div>
 
@@ -453,11 +445,11 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="grid-2 mt">
       <!-- DB SYSTEM -->
       <div class="card">
-        <h3 class="u-wavy-cyan">💾 Database System (database.txt)</h3>
-        <p style="font-weight:700;color:#55555f;margin-top:8px;font-size:.85rem">Semua data disimpan di server Flask secara terpusat.</p>
+        <h3 class="u-wavy-cyan">💾 Database System (MongoDB / Backup)</h3>
+        <p style="font-weight:700;color:#55555f;margin-top:8px;font-size:.85rem">Data tersimpan di MongoDB Atlas atau database terpusat.</p>
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-          <button class="btn btn-cyan" id="btnDownloadDb">⬇️ Download DB</button>
-          <label class="btn btn-pink" style="cursor:pointer">⬆️ Restore DB<input type="file" id="restoreFile" accept=".txt,.json" hidden></label>
+          <button class="btn btn-cyan" id="btnDownloadDb">⬇️ Backup Data JSON</button>
+          <label class="btn btn-pink" style="cursor:pointer">⬆️ Restore Data<input type="file" id="restoreFile" accept=".txt,.json" hidden></label>
         </div>
       </div>
 
@@ -516,9 +508,9 @@ footer .sticker{transform:rotate(1.5deg)}
             <label class="radio-pill on" id="pillFile"><input type="radio" name="gmSrc" value="file" checked> Upload File</label>
             <label class="radio-pill" id="pillUrl"><input type="radio" name="gmSrc" value="url"> URL</label>
           </div>
-          <p style="font-size:.7rem;font-weight:800;opacity:.6;margin-top:6px">File upload masuk folder <b>asset</b> server. Bisa pilih banyak file sekaligus (bisa campur gambar &amp; video).</p>
+          <p style="font-size:.7rem;font-weight:800;opacity:.6;margin-top:6px">File upload tersimpan otomatis di Cloud Storage (Cloudinary/Server).</p>
           <div id="boxFile" style="margin-top:10px"><input type="file" id="gmFile" accept=".png,.jpg,.jpeg,.gif,.webp,.mp4,.webm,.mov" multiple></div>
-          <div id="boxUrl" style="margin-top:10px;display:none"><textarea id="gmUrls" rows="4" placeholder="https://…/media1.png&#10;https://…/media2.mp4&#10;https://…/media3.jpg&#10;(satu URL per baris)"></textarea></div>
+          <div id="boxUrl" style="margin-top:10px;display:none"><textarea id="gmUrls" rows="4" placeholder="https://…/media1.png&#10;https://…/media2.mp4&#10;(satu URL per baris)"></textarea></div>
           <label class="f-label">💧 Watermark "dibuat dengan"</label>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <button class="radio-pill on" data-wm="" onclick="setWatermark('')">🚫 Tanpa</button>
@@ -591,6 +583,8 @@ footer .sticker{transform:rotate(1.5deg)}
 
 <script>
 /* ================= KONFIG ================= */
+// API Key bawaan server yang otomatis dipakai oleh semua AI Tools
+const SERVER_API_KEY = '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';
 const WA_NUMBER = '6281234567890'; // ganti dengan nomor WhatsApp admin
 const HEADER_PROMPT = 'Buat Gambar Realistis Dari subjek pria dan wanita tersebut tanpa mengubah wajah';
 const phState = { db:{generatedCount:0,gallery:[],announcements:[], admin:{name:'Nathan', avatar:'https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f'}}, editId:null };
@@ -639,7 +633,7 @@ document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()
 
 /* ================= MARQUEE ================= */
 (function(){
-  const items = ['★ PROMPTHUB','✏️ GENERATE','🖼️ GALLERY','🧰 AI TOOLS','📣 INFO','💾 DATABASE.TXT','🚀 CARTOON EDITION','⚡ LIVE v3.0'];
+  const items = ['★ PROMPTHUB','✏️ GENERATE','🖼️ GALLERY','🧰 AI TOOLS','📣 INFO','💾 MONGODB DATABASE','🚀 CARTOON EDITION','⚡ LIVE v3.0'];
   const half = items.map(i=>'<span>'+i+'</span>').join('<span>•</span>');
   el('mqTrack').innerHTML = half + '<span>•</span>' + half + '<span>•</span>';
 })();
@@ -742,7 +736,7 @@ window.addNegTag = function(){
   selectedNeg.push(v); el('inNeg').value=''; renderNegTags(); showToast('Tag "'+v+'" ditambahkan!');
 };
 
-/* ================= GENERATOR (SOLO / COUPLE / VIDEO) ================= */
+/* ================= GENERATOR ================= */
 const genState = { type:'solo', subj:'wanita' };
 const GEN_FIELDS = {
   solo:[
@@ -963,12 +957,12 @@ document.querySelectorAll('.tooltab').forEach(tb=>tb.addEventListener('click', (
 
 /* ================= ENHANCER ================= */
 el('btnEnhance').addEventListener('click', async ()=>{
-  const key = el('inGeminiKey').value.trim(), idea = el('inIdea').value.trim();
-  if(!key || !idea){ showToast('API key & ide wajib diisi!','err'); return; }
+  const idea = el('inIdea').value.trim();
+  if(!idea){ showToast('Ide prompt wajib diisi!','err'); return; }
   const btn = el('btnEnhance'); btn.disabled = true; btn.textContent = '⏳ Meng-enhance…';
   el('enhResult').textContent = 'Berpikir… 🤔';
   try{
-    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${SERVER_API_KEY}`,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -985,7 +979,7 @@ el('btnEnhance').addEventListener('click', async ()=>{
     showToast('Enhance berhasil! ✨');
   }catch(err){
     el('enhResult').textContent = '❌ Error: ' + err.message;
-    showToast('Gagal menghubungi Gemini!','err');
+    showToast('Gagal terhubung ke AI!','err');
   }
   btn.disabled = false; btn.innerHTML = '🚀 Enhance dengan AI';
 });
@@ -1008,15 +1002,13 @@ el('imgFile').addEventListener('change', ()=>{
 });
 
 async function geminiImagePrompt(){
-  const key = (el('inGeminiKey2').value||el('inGeminiKey').value).trim();
   const f = el('imgFile').files[0];
-  if(!key){ throw new Error('Gemini API Key wajib diisi!'); }
   if(!f){ throw new Error('Pilih foto dulu!'); }
   const b64 = await new Promise(res=>{
     const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
   });
   
-  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${SERVER_API_KEY}`,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({
@@ -1039,7 +1031,7 @@ async function geminiImagePrompt(){
 
 el('btnImg2Prompt').addEventListener('click', async ()=>{
   const btn = el('btnImg2Prompt'); btn.disabled=true; btn.textContent='⏳ Menganalisis foto…';
-  el('i2pResult').textContent='Gemini sedang menganalisis foto… 🧠';
+  el('i2pResult').textContent='AI sedang menganalisis foto… 🧠';
   try{
     el('i2pResult').textContent = await geminiImagePrompt();
     showToast('Prompt berhasil dibuat! 🖼️');
@@ -1068,9 +1060,7 @@ el('duoFile').addEventListener('change', ()=>{
 });
 
 async function geminiVipDuo(){
-  const key = (el('inGeminiKey3').value||el('inGeminiKey').value).trim();
   const f = el('duoFile').files[0];
-  if(!key){ throw new Error('Gemini API Key wajib diisi!'); }
   if(!f){ throw new Error('Pilih foto pasangan dulu!'); }
   const b64 = await new Promise(res=>{
     const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
@@ -1079,7 +1069,7 @@ async function geminiVipDuo(){
   const sys = 'You are an expert AI image prompt engineer. Analyze the couple (pria & wanita) photo and generate a structured Indonesian prompt based on the photo. Do NOT add a header. Do NOT use markdown. Output ONLY the following format with exactly these labels:\n\nOutfit : [deskripsi]\n\nPose : [deskripsi]\n\nlatar belakang dan pencahayaan : [deskripsi]\n\npengambilan gambar : [deskripsi]';
   const user = 'Analisis foto pasangan ini. Buatkan 4 bagian deskripsi sesuai format persis tanpa tambahan kata.';
   
-  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${SERVER_API_KEY}`,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({
@@ -1106,7 +1096,7 @@ function wrapVipDuo(body){
 
 el('btnDuoGen').addEventListener('click', async ()=>{
   const btn = el('btnDuoGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis pasangan…';
-  el('duoResult').textContent='Gemini sedang menganalisis foto pasangan… 🧠';
+  el('duoResult').textContent='AI sedang menganalisis foto pasangan… 🧠';
   try{
     const body = await geminiVipDuo();
     el('duoResult').textContent = wrapVipDuo(body);
@@ -1138,9 +1128,7 @@ el('soloFile').addEventListener('change', ()=>{
 });
 
 async function geminiVipSolo(){
-  const key = (el('inGeminiKey4').value||el('inGeminiKey').value).trim();
   const f = el('soloFile').files[0];
-  if(!key){ throw new Error('Gemini API Key wajib diisi!'); }
   if(!f){ throw new Error('Pilih foto dulu!'); }
   const b64 = await new Promise(res=>{
     const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
@@ -1149,7 +1137,7 @@ async function geminiVipSolo(){
   const sys = 'You are an expert AI image prompt engineer. Analyze the single-person photo and generate a structured Indonesian prompt based on the photo. Do NOT add a header. Do NOT use markdown. Output ONLY the following format with exactly these labels:\n\nOutfit : [deskripsi]\n\nPose : [deskripsi]\n\nlatar belakang dan pencahayaan : [deskripsi]\n\npengambilan gambar : [deskripsi]';
   const user = 'Analisis foto satu orang ini. Buatkan 4 bagian deskripsi sesuai format persis tanpa tambahan kata.';
   
-  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${SERVER_API_KEY}`,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({
@@ -1178,7 +1166,7 @@ function wrapVipSolo(body){
 
 el('btnSoloGen').addEventListener('click', async ()=>{
   const btn = el('btnSoloGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis foto…';
-  el('soloResult').textContent='Gemini sedang menganalisis foto… 🧠';
+  el('soloResult').textContent='AI sedang menganalisis foto… 🧠';
   try{
     const body = await geminiVipSolo();
     el('soloResult').textContent = wrapVipSolo(body);
@@ -1267,8 +1255,8 @@ el('btnDownloadDb').addEventListener('click', async ()=>{
   const r = await fetch('/api/database');
   const blob = await r.blob();
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = 'database.txt'; a.click();
-  URL.revokeObjectURL(a.href); showToast('database.txt diunduh! ⬇️');
+  a.href = URL.createObjectURL(blob); a.download = 'database_backup.json'; a.click();
+  URL.revokeObjectURL(a.href); showToast('Data JSON diunduh! ⬇️');
 });
 el('restoreFile').addEventListener('change', async evt=>{
   const f = evt.target.files[0]; if(!f) return;
@@ -1321,7 +1309,6 @@ window.deleteAnnouncement = function(id){
 
 /* sumber media pills */
 document.querySelectorAll('input[name="gmSrc"]').forEach(rd=>rd.addEventListener('change', ()=>{
-  const isFile = rd.value==='file' && rd.checked;
   const srcVal = document.querySelector('input[name="gmSrc"]:checked').value;
   el('boxFile').style.display = srcVal==='file' ? 'block':'none';
   el('boxUrl').style.display = srcVal==='url' ? 'block':'none';
@@ -1336,8 +1323,9 @@ async function uploadMedia(file){
   if(!d.success) throw new Error(d.message || 'Upload gagal');
   return d.url;
 }
-/* ================= WATERMARK (badge only) ================= */
-let wmName = ''; // default watermark (fallback)
+
+/* ================= WATERMARK ================= */
+let wmName = ''; 
 window.setWatermark = function(v){
   wmName = v;
   document.querySelectorAll('[data-wm]').forEach(b=>b.classList.toggle('on', b.dataset.wm===v));
@@ -1354,7 +1342,6 @@ function currentWmName(){
 }
 el('wmCustom').addEventListener('input', updateWmPreview);
 function wmForIndex(i){
-  // Per-media watermark list (dari textarea), urut; kosong => pakai default
   const list = (el('wmPerMedia').value||'').split(/[\n,]/).map(s=>s.trim()).filter(Boolean);
   if(list[i]) return list[i];
   return currentWmName();
