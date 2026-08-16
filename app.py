@@ -100,13 +100,23 @@ def write_db(data):
         json.dump(data, f, indent=4)
 
 # ================= HELPER PEMANGGILAN GEMINI API =================
+# Ganti fungsi call_gemini di app.py dengan versi berikut:
+
 def call_gemini(payload):
-    if not GEMINI_API_KEY.strip():
+    key = GEMINI_API_KEY.strip()
+    if not key:
         raise Exception("GEMINI_API_KEY belum disetel di Environment Variables Koyeb!")
         
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY.strip()}"
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
     req_data = json.dumps(payload).encode('utf-8')
-    req = urllib.request.Request(url, data=req_data, headers={'Content-Type': 'application/json'})
+    
+    # Mengirim API Key via header resmi x-goog-api-key
+    headers = {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': key
+    }
+    
+    req = urllib.request.Request(url, data=req_data, headers=headers)
     
     try:
         with urllib.request.urlopen(req) as resp:
@@ -122,6 +132,7 @@ def call_gemini(payload):
             raise Exception(err_json.get('error', {}).get('message', f"HTTP Error {e.code}"))
         except json.JSONDecodeError:
             raise Exception(f"HTTP Error {e.code}: {e.reason}")
+
 
 # ================= ROUTES =================
 @app.route('/')
