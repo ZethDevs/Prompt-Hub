@@ -12,7 +12,7 @@ SECRET_KEY = 'lutfifarid'
 ADMIN_LOGIN_KEY = 'lutfifarid'
 
 # API Key bawaan server untuk AI Tools (Enhancer, Img2Prompt, VIP Duo, VIP Solo)
-GEMINI_API_KEY = "AQ.Ab8RN6KttJ1MkuLtGUt5McQcPrbj4LytE1zg6ruDkHlKFURtow"
+GEMINI_API_KEY = "AQ.Ab8RN6LMG8hz27fCD0DeGoU5ZFpeZoDDzGPniHSMjE2zvXkwMA"
 
 # String Koneksi MongoDB Atlas
 # Silakan ganti URL di bawah ini dengan URI MongoDB Atlas kamu:
