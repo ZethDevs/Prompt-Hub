@@ -40,7 +40,7 @@ WA_NUMBER = os.environ.get('WA_NUMBER', '6281234567890')
 # Gemini endpoint — model configurable via .env
 # Default 'gemini-2.0-flash' (stabil & tersedia untuk semua user).
 # Jika butuh model lain, set GEMINI_MODEL di .env (mis. 'gemini-1.5-flash', 'gemini-flash-latest').
-GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
+GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'gemini-3.6-flash')
 GEMINI_URL = (
     f'https://generativelanguage.googleapis.com/v1beta/models/'
     f'{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}'
