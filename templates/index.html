@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PromptHub — Nathan</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
-<link href="[https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/500.css](https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/500.css)" rel="stylesheet">
-<link href="[https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/600.css](https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/600.css)" rel="stylesheet">
-<link href="[https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/700.css](https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/700.css)" rel="stylesheet">
-<link href="[https://cdn.jsdelivr.net/fontsource/css/nunito@latest/400.css](https://cdn.jsdelivr.net/fontsource/css/nunito@latest/400.css)" rel="stylesheet">
-<link href="[https://cdn.jsdelivr.net/fontsource/css/nunito@latest/700.css](https://cdn.jsdelivr.net/fontsource/css/nunito@latest/700.css)" rel="stylesheet">
-<link href="[https://cdn.jsdelivr.net/fontsource/css/nunito@latest/800.css](https://cdn.jsdelivr.net/fontsource/css/nunito@latest/800.css)" rel="stylesheet">
-<link href="[https://cdn.jsdelivr.net/fontsource/css/nunito@latest/900.css](https://cdn.jsdelivr.net/fontsource/css/nunito@latest/900.css)" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<link href="https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/500.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/600.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/fredoka@latest/700.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/nunito@latest/400.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/nunito@latest/700.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/nunito@latest/800.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/fontsource/css/nunito@latest/900.css" rel="stylesheet">
 <style>
 :root{
   --ink:#1b1b1f; --paper:#fff8ea; --card:#ffffff;
@@ -129,7 +129,7 @@ textarea{resize:vertical;min-height:84px}
 .term-body .cursor{display:inline-block;width:9px;height:16px;background:var(--lime);animation:blink 1s steps(1) infinite;vertical-align:middle}
 @keyframes blink{50%{opacity:0}}
 
-/* Light prompt box (gallery) */
+/* Light prompt box (gallery) — tetap terbaca di mode gelap */
 .term-light{background:#fff;color:#1e293b;border:3px solid var(--ink);border-radius:12px;padding:16px;min-height:90px;max-height:320px;overflow:auto;font-family:ui-monospace,Consolas,monospace;font-size:.92rem;line-height:1.7;white-space:pre-wrap}
 
 /* ============ GALLERY ============ */
@@ -162,7 +162,7 @@ textarea{resize:vertical;min-height:84px}
 /* ============ TABLE ============ */
 .table-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:.85rem}
-th,td{border:2.5px solid var(--ink);padding:99px 10px;text-align:left;font-weight:700;vertical-align:middle}
+th,td{border:2.5px solid var(--ink);padding:9px 10px;text-align:left;font-weight:700;vertical-align:middle}
 th{background:var(--yellow);text-transform:uppercase;font-size:.72rem;letter-spacing:.6px}
 td .thumb{width:56px;height:44px;object-fit:cover;border:2.5px solid var(--ink);border-radius:8px}
 
@@ -224,7 +224,7 @@ footer .sticker{transform:rotate(1.5deg)}
       <span class="float-emoji" style="top:0;left:8%">⭐</span>
       <span class="float-emoji" style="top:12%;right:4%;animation-delay:.6s">💥</span>
       <span class="float-emoji" style="bottom:6%;left:2%;animation-delay:1.1s">☁️</span>
-      <img src="[https://image.qwenlm.ai/public_source/4a0b3652-85bc-4bd3-b523-7b70657750e3/14d616d35-52a2-41af-83a6-def6bb0572af.png](https://image.qwenlm.ai/public_source/4a0b3652-85bc-4bd3-b523-7b70657750e3/14d616d35-52a2-41af-83a6-def6bb0572af.png)" alt="Mascot PromptHub">
+      <img src="https://image.qwenlm.ai/public_source/4a0b3652-85bc-4bd3-b523-7b70657750e3/14d616d35-52a2-41af-83a6-def6bb0572af.png" alt="Mascot PromptHub">
     </div>
   </div>
 
@@ -292,7 +292,7 @@ footer .sticker{transform:rotate(1.5deg)}
     </div>
   </div>
 
-  <!-- STAGES -->
+  <!-- STAGES ala zelapi -->
   <div class="grid-4 mt" style="margin-top:44px">
     <div class="stage"><span class="stage-num" style="background:var(--yellow)">01</span><h4>Isi Parameter</h4><p>Lengkapi outfit, pose, latar, kamera &amp; style.</p></div>
     <div class="stage"><span class="stage-num" style="background:var(--pink)">02</span><h4>Generate</h4><p>Prompt dirakit otomatis dengan header realistis.</p></div>
@@ -310,7 +310,7 @@ footer .sticker{transform:rotate(1.5deg)}
   <p style="margin:12px 0 22px;font-weight:700;color:#55555f">Klik kartu untuk melihat detail prompt atau memainkan video. Karya <span class="badge bg-free">FREE</span> bisa disalin, karya <span class="badge bg-premium">PREMIUM</span> via WhatsApp.</p>
   <div class="g-grid" id="galleryGrid"></div>
   <div class="empty-box card" id="galleryEmpty" style="display:none">
-    <img src="[https://image.qwenlm.ai/public_source/4a0b3652-85bc-4bd3-b523-7b70657750e3/10bf7d7e7-609a-4168-a6f1-798503857f53.png](https://image.qwenlm.ai/public_source/4a0b3652-85bc-4bd3-b523-7b70657750e3/10bf7d7e7-609a-4168-a6f1-798503857f53.png)" alt="Gallery kosong">
+    <img src="https://image.qwenlm.ai/public_source/4a0b3652-85bc-4bd3-b523-7b70657750e3/10bf7d7e7-609a-4168-a6f1-798503857f53.png" alt="Gallery kosong">
     <h3>Gallery Kosong</h3>
     <p style="font-weight:700;color:#55555f;margin-top:6px">Belum ada karya yang dipajang oleh admin. 🥲</p>
   </div>
@@ -320,9 +320,9 @@ footer .sticker{transform:rotate(1.5deg)}
 <section class="section" id="sec-tools">
   <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
     <h2 class="u-wavy">🧰 AI Tools</h2>
-    <span class="sticker st-purple">AI POWERED</span>
+    <span class="sticker st-purple">GEMINI POWERED</span>
   </div>
-  <p style="margin:12px 0 20px;font-weight:700;color:#55555f">Bantuan AI dalam satu tempat: perkaya prompt atau ubah foto menjadi prompt menggunakan AI Engine bawaan server.</p>
+  <p style="margin:12px 0 20px;font-weight:700;color:#55555f">Bantuan AI dalam satu tempat: perkaya prompt atau ubah foto menjadi prompt menggunakan Gemini AI.</p>
 
   <!-- TAB TOOLS -->
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
@@ -337,6 +337,9 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-pink" style="position:absolute;top:-16px;right:18px">✨ ENHANCER</span>
       <h3 class="u-wavy">AI Prompt Enhancer</h3>
+      <div class="head-note mt" style="margin-top:0;margin-bottom:14px">
+        <b>🔒 API key aman</b> — Gemini dipanggil dari server, kamu tidak perlu memasukkan API key apa pun.
+      </div>
       <label class="f-label">💡 Ide Prompt (ID/EN)</label>
       <textarea id="inIdea" placeholder="Contoh: kucing astronot di bulan…"></textarea>
       <div style="margin-top:16px"><button class="btn btn-pink" id="btnEnhance">🚀 Enhance dengan AI</button></div>
@@ -352,7 +355,10 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-cyan" style="position:absolute;top:-16px;right:18px">🖼️ IMG→PROMPT</span>
       <h3 class="u-wavy-cyan">Image to Prompt</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto, lalu AI akan menganalisisnya dan membuat prompt gambar yang detail (subjek, outfit, pose, latar, pencahayaan, gaya).</p>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto, lalu Gemini AI akan menganalisisnya dan membuat prompt gambar yang detail (subjek, outfit, pose, latar, pencahayaan, gaya).</p>
+      <div class="head-note mt" style="margin-top:0;margin-bottom:14px">
+        <b>🔒 API key aman</b> — Gemini dipanggil dari server, kamu tidak perlu memasukkan API key apa pun.
+      </div>
       <label class="f-label">🖼️ Foto</label>
       <input type="file" id="imgFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
       <div id="imgPreview" style="margin-top:12px;display:none">
@@ -371,8 +377,11 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-yellow" style="position:absolute;top:-16px;right:18px">👫 VIP DUO</span>
       <h3 class="u-wavy-lime">VIP Duo — Image to Prompt Couple</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto pasangan (pria &amp; wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus couple dengan header, final style &amp; negative prompt yang otomatis.</p>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto pasangan (pria &amp; wanita), lalu Gemini AI akan menganalisisnya dan membuat prompt berformat khusus couple dengan header, final style &amp; negative prompt yang otomatis.</p>
 
+      <div class="head-note mt" style="margin-top:0;margin-bottom:14px">
+        <b>🔒 API key aman</b> — Gemini dipanggil dari server, kamu tidak perlu memasukkan API key apa pun.
+      </div>
       <label class="f-label">👫 Foto Pasangan</label>
       <input type="file" id="duoFile" accept=".png,.jpg,.jpeg,.gif,.webp" style="padding:8px">
       <div id="duoPreview" style="margin-top:12px;display:none">
@@ -396,8 +405,11 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="card" style="max-width:760px;margin:0 auto">
       <span class="sticker st-cyan" style="position:absolute;top:-16px;right:18px">👤 VIP SOLO</span>
       <h3 class="u-wavy-cyan">VIP Solo — Image to Prompt Single</h3>
-      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto satu orang (pria/wanita), lalu AI akan menganalisisnya dan membuat prompt berformat khusus solo dengan header, final style &amp; negative prompt yang otomatis.</p>
+      <p style="font-weight:700;color:#55555f;margin-top:10px">Unggah foto satu orang (pria/wanita), lalu Gemini AI akan menganalisisnya dan membuat prompt berformat khusus solo dengan header, final style &amp; negative prompt yang otomatis.</p>
 
+      <div class="head-note mt" style="margin-top:0;margin-bottom:14px">
+        <b>🔒 API key aman</b> — Gemini dipanggil dari server, kamu tidak perlu memasukkan API key apa pun.
+      </div>
       <label class="f-label">👤 Subjek</label>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <button class="radio-pill on" data-solo-subj="wanita" onclick="setSoloSubj('wanita')">👩 Wanita</button>
@@ -428,8 +440,8 @@ footer .sticker{transform:rotate(1.5deg)}
   <div class="card login-card" id="adminLogin">
     <div class="lock">🔐</div>
     <h2 class="u-wavy">Area Terbatas</h2>
-    <p style="font-weight:700;color:#55555f;margin:10px 0 18px">Masukkan Secret Key Admin.</p>
-    <input type="password" id="inSecret" placeholder="Secret Key admin kamu..">
+    <p style="font-weight:700;color:#55555f;margin:10px 0 18px">Masukkan Email Terdaftar.</p>
+    <input type="password" id="inSecret" placeholder="email kamu..">
     <div style="margin-top:16px"><button class="btn btn-yellow" id="btnLogin">🚪 Masuk Sistem</button></div>
   </div>
 
@@ -445,11 +457,11 @@ footer .sticker{transform:rotate(1.5deg)}
     <div class="grid-2 mt">
       <!-- DB SYSTEM -->
       <div class="card">
-        <h3 class="u-wavy-cyan">💾 Database System (MongoDB / Backup)</h3>
-        <p style="font-weight:700;color:#55555f;margin-top:8px;font-size:.85rem">Data tersimpan di MongoDB Atlas atau database terpusat.</p>
+        <h3 class="u-wavy-cyan">💾 Database System (MongoDB Atlas)</h3>
+        <p style="font-weight:700;color:#55555f;margin-top:8px;font-size:.85rem">Semua data tersimpan online di MongoDB Atlas. Media (gambar/video) tersimpan di Cloudinary.</p>
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-          <button class="btn btn-cyan" id="btnDownloadDb">⬇️ Backup Data JSON</button>
-          <label class="btn btn-pink" style="cursor:pointer">⬆️ Restore Data<input type="file" id="restoreFile" accept=".txt,.json" hidden></label>
+          <button class="btn btn-cyan" id="btnDownloadDb">⬇️ Download DB JSON</button>
+          <label class="btn btn-pink" style="cursor:pointer">⬆️ Restore DB<input type="file" id="restoreFile" accept=".txt,.json" hidden></label>
         </div>
       </div>
 
@@ -508,9 +520,9 @@ footer .sticker{transform:rotate(1.5deg)}
             <label class="radio-pill on" id="pillFile"><input type="radio" name="gmSrc" value="file" checked> Upload File</label>
             <label class="radio-pill" id="pillUrl"><input type="radio" name="gmSrc" value="url"> URL</label>
           </div>
-          <p style="font-size:.7rem;font-weight:800;opacity:.6;margin-top:6px">File upload tersimpan otomatis di Cloud Storage (Cloudinary/Server).</p>
+          <p style="font-size:.7rem;font-weight:800;opacity:.6;margin-top:6px">File upload langsung masuk ke <b>Cloudinary</b> (storage online). Bisa pilih banyak file sekaligus (bisa campur gambar &amp; video).</p>
           <div id="boxFile" style="margin-top:10px"><input type="file" id="gmFile" accept=".png,.jpg,.jpeg,.gif,.webp,.mp4,.webm,.mov" multiple></div>
-          <div id="boxUrl" style="margin-top:10px;display:none"><textarea id="gmUrls" rows="4" placeholder="https://…/media1.png&#10;https://…/media2.mp4&#10;(satu URL per baris)"></textarea></div>
+          <div id="boxUrl" style="margin-top:10px;display:none"><textarea id="gmUrls" rows="4" placeholder="https://…/media1.png&#10;https://…/media2.mp4&#10;https://…/media3.jpg&#10;(satu URL per baris)"></textarea></div>
           <label class="f-label">💧 Watermark "dibuat dengan"</label>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <button class="radio-pill on" data-wm="" onclick="setWatermark('')">🚫 Tanpa</button>
@@ -579,13 +591,14 @@ footer .sticker{transform:rotate(1.5deg)}
 </div>
 
 <div id="toastWrap"></div>
-<footer>Made with 💛 oleh <span class="sticker st-yellow">NATHAN × PROMPTHUB</span> · Cartoon Edition v3.0</footer>
+<footer>Made with 💛 oleh <span class="sticker st-yellow">NATHAN × PROMPTHUB</span> · Cloud Edition v3.1 · MongoDB + Cloudinary + Gemini</footer>
 
 <script>
 /* ================= KONFIG ================= */
-const WA_NUMBER = '{{ wa_number }}'; // Nomor WhatsApp dinamis dari .env
+// WA_NUMBER di-inject dari .env oleh server (Jinja2)
+const WA_NUMBER = '{{ wa_number }}';
 const HEADER_PROMPT = 'Buat Gambar Realistis Dari subjek pria dan wanita tersebut tanpa mengubah wajah';
-const phState = { db:{generatedCount:0,gallery:[],announcements:[], admin:{name:'Nathan', avatar:'[https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f)'}}, editId:null };
+const phState = { db:{generatedCount:0,gallery:[],announcements:[], admin:{name:'Nathan', avatar:'https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f'}}, editId:null };
 
 const el = id => document.getElementById(id);
 const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -610,7 +623,7 @@ async function loadDB(){
   }
   if(!phState.db.gallery) phState.db.gallery = [];
   if(!phState.db.announcements) phState.db.announcements = [];
-  if(!phState.db.admin) phState.db.admin = {name:'Nathan', avatar:'[https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f)'};
+  if(!phState.db.admin) phState.db.admin = {name:'Nathan', avatar:'https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f'};
   renderAll();
   renderAdminState();
 }
@@ -631,7 +644,7 @@ document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()
 
 /* ================= MARQUEE ================= */
 (function(){
-  const items = ['★ PROMPTHUB','✏️ GENERATE','🖼️ GALLERY','🧰 AI TOOLS','📣 INFO','💾 MONGODB DATABASE','🚀 CARTOON EDITION','⚡ LIVE v3.0'];
+  const items = ['★ PROMPTHUB','✏️ GENERATE','🖼️ GALLERY','🧰 AI TOOLS','📣 INFO','💾 MONGODB + CLOUDINARY','🚀 CARTOON EDITION','⚡ LIVE v3.1'];
   const half = items.map(i=>'<span>'+i+'</span>').join('<span>•</span>');
   el('mqTrack').innerHTML = half + '<span>•</span>' + half + '<span>•</span>';
 })();
@@ -650,7 +663,7 @@ function annBubble(a){
   const typeLabel = type==='success'?'Sukses':type==='warning'?'Peringatan':'Info';
   const au = a.uploadedBy || phState.db.admin || {};
   const aname = au.name || 'Admin';
-  const aav = au.avatar || '[https://ui-avatars.com/api/?name='+encodeURIComponent(aname)+'&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name='+encodeURIComponent(aname)+'&background=ffd43b&color=1b1b1f)';
+  const aav = au.avatar || 'https://ui-avatars.com/api/?name='+encodeURIComponent(aname)+'&background=ffd43b&color=1b1b1f';
   return '<div class="bubble t-'+type+'"><span class="badge bg-'+type+'">'+typeLabel+'</span> <span class="b-date">'+esc(date)+'</span><h4>'+esc(a.title)+'</h4><p>'+esc(msg)+'</p>'+
     '<div class="b-author"><img src="'+esc(aav)+'" alt=""><span>'+esc(aname)+'</span></div></div>';
 }
@@ -666,7 +679,7 @@ function itemMedia(item){
 function itemAuthor(item){
   const a = item.uploadedBy || phState.db.admin || {};
   const name = a.name || 'Admin';
-  const avatar = a.avatar || '[https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f)';
+  const avatar = a.avatar || 'https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f';
   return { name, avatar };
 }
 function mediaCountBadge(list){
@@ -734,7 +747,7 @@ window.addNegTag = function(){
   selectedNeg.push(v); el('inNeg').value=''; renderNegTags(); showToast('Tag "'+v+'" ditambahkan!');
 };
 
-/* ================= GENERATOR ================= */
+/* ================= GENERATOR (SOLO / COUPLE / VIDEO) ================= */
 const genState = { type:'solo', subj:'wanita' };
 const GEN_FIELDS = {
   solo:[
@@ -914,7 +927,7 @@ window.openGalleryModal = function(id){
   el('gmPrompt').textContent = item.prompt;
   el('gmActions').innerHTML = isFree
     ? '<button class="btn btn-lime" id="btnModalCopy">📋 Salin Prompt</button>'
-    : '<a class="btn btn-cyan" target="_blank" href="[https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent](https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent)('Halo Nathan! Saya tertarik dengan prompt premium: "'+item.prompt.slice(0,60)+'…"')+'">💬 Minta via WhatsApp</a>';
+    : '<a class="btn btn-cyan" target="_blank" href="https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent('Halo Nathan! Saya tertarik dengan prompt premium: "'+item.prompt.slice(0,60)+'…"')+'">💬 Minta via WhatsApp</a>';
   if(isFree){
     el('btnModalCopy').addEventListener('click', async ()=>{ await copyText(item.prompt); showToast('Prompt disalin! 📋'); });
   }
@@ -956,7 +969,7 @@ document.querySelectorAll('.tooltab').forEach(tb=>tb.addEventListener('click', (
 /* ================= ENHANCER ================= */
 el('btnEnhance').addEventListener('click', async ()=>{
   const idea = el('inIdea').value.trim();
-  if(!idea){ showToast('Ide prompt wajib diisi!','err'); return; }
+  if(!idea){ showToast('Ide wajib diisi!','err'); return; }
   const btn = el('btnEnhance'); btn.disabled = true; btn.textContent = '⏳ Meng-enhance…';
   el('enhResult').textContent = 'Berpikir… 🤔';
   try{
@@ -967,12 +980,11 @@ el('btnEnhance').addEventListener('click', async ()=>{
     });
     const d = await r.json();
     if(!d.success) throw new Error(d.message || 'Gagal');
-    
-    el('enhResult').textContent = cleanModelOutput(d.result);
+    el('enhResult').textContent = d.result;
     showToast('Enhance berhasil! ✨');
   }catch(err){
     el('enhResult').textContent = '❌ Error: ' + err.message;
-    showToast('Gagal terhubung ke AI!','err');
+    showToast('Gagal menghubungi server!','err');
   }
   btn.disabled = false; btn.innerHTML = '🚀 Enhance dengan AI';
 });
@@ -997,28 +1009,16 @@ el('imgFile').addEventListener('change', ()=>{
 async function geminiImagePrompt(){
   const f = el('imgFile').files[0];
   if(!f){ throw new Error('Pilih foto dulu!'); }
-  const b64 = await new Promise(res=>{
-    const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
-  });
-  
-  const r = await fetch('/api/ai/vision',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({
-      image_b64: b64,
-      mime_type: f.type,
-      mode: 'i2p'
-    })
-  });
+  const fd = new FormData(); fd.append('image', f);
+  const r = await fetch('/api/ai/img2prompt',{method:'POST',body:fd});
   const d = await r.json();
   if(!d.success) throw new Error(d.message || 'Gagal');
-  
-  return cleanModelOutput(d.result);
+  return d.result;
 }
 
 el('btnImg2Prompt').addEventListener('click', async ()=>{
   const btn = el('btnImg2Prompt'); btn.disabled=true; btn.textContent='⏳ Menganalisis foto…';
-  el('i2pResult').textContent='AI sedang menganalisis foto… 🧠';
+  el('i2pResult').textContent='Server sedang menganalisis foto… 🧠';
   try{
     el('i2pResult').textContent = await geminiImagePrompt();
     showToast('Prompt berhasil dibuat! 🖼️');
@@ -1049,23 +1049,11 @@ el('duoFile').addEventListener('change', ()=>{
 async function geminiVipDuo(){
   const f = el('duoFile').files[0];
   if(!f){ throw new Error('Pilih foto pasangan dulu!'); }
-  const b64 = await new Promise(res=>{
-    const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
-  });
-  
-  const r = await fetch('/api/ai/vision',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({
-      image_b64: b64,
-      mime_type: f.type,
-      mode: 'vipduo'
-    })
-  });
+  const fd = new FormData(); fd.append('image', f);
+  const r = await fetch('/api/ai/vipduo',{method:'POST',body:fd});
   const d = await r.json();
   if(!d.success) throw new Error(d.message || 'Gagal');
-  
-  return cleanModelOutput(d.result);
+  return d.result;
 }
 
 function wrapVipDuo(body){
@@ -1074,7 +1062,7 @@ function wrapVipDuo(body){
 
 el('btnDuoGen').addEventListener('click', async ()=>{
   const btn = el('btnDuoGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis pasangan…';
-  el('duoResult').textContent='AI sedang menganalisis foto pasangan… 🧠';
+  el('duoResult').textContent='Server sedang menganalisis foto pasangan… 🧠';
   try{
     const body = await geminiVipDuo();
     el('duoResult').textContent = wrapVipDuo(body);
@@ -1108,24 +1096,11 @@ el('soloFile').addEventListener('change', ()=>{
 async function geminiVipSolo(){
   const f = el('soloFile').files[0];
   if(!f){ throw new Error('Pilih foto dulu!'); }
-  const b64 = await new Promise(res=>{
-    const rd = new FileReader(); rd.onload=()=>res(rd.result.split(',')[1]); rd.readAsDataURL(f);
-  });
-  
-  const r = await fetch('/api/ai/vision',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({
-      image_b64: b64,
-      mime_type: f.type,
-      mode: 'vipsolo',
-      subject: soloSubj
-    })
-  });
+  const fd = new FormData(); fd.append('image', f);
+  const r = await fetch('/api/ai/vipsolo',{method:'POST',body:fd});
   const d = await r.json();
   if(!d.success) throw new Error(d.message || 'Gagal');
-  
-  return cleanModelOutput(d.result);
+  return d.result;
 }
 
 function wrapVipSolo(body){
@@ -1136,7 +1111,7 @@ function wrapVipSolo(body){
 
 el('btnSoloGen').addEventListener('click', async ()=>{
   const btn = el('btnSoloGen'); btn.disabled=true; btn.textContent='⏳ Menganalisis foto…';
-  el('soloResult').textContent='AI sedang menganalisis foto… 🧠';
+  el('soloResult').textContent='Server sedang menganalisis foto… 🧠';
   try{
     const body = await geminiVipSolo();
     el('soloResult').textContent = wrapVipSolo(body);
@@ -1157,7 +1132,7 @@ function renderAdminState(){
   el('adminDash').style.display = logged ? 'block' : 'none';
   const admin = phState.db.admin || {};
   const name = admin.name || 'Nathan';
-  const avatar = admin.avatar || '[https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f)';
+  const avatar = admin.avatar || 'https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f';
   if(logged){
     el('adminName').value = name;
     el('adminAvatarUrl').value = /^https?:/.test(avatar) ? avatar : '';
@@ -1186,7 +1161,7 @@ el('btnSaveAdmin').addEventListener('click', async ()=>{
       avatar = await uploadMedia(file);
     }
     if(!avatar){
-      avatar = '[https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f)';
+      avatar = 'https://ui-avatars.com/api/?name='+encodeURIComponent(name)+'&background=ffd43b&color=1b1b1f';
     }
     if(!phState.db.admin) phState.db.admin = {};
     phState.db.admin.name = name;
@@ -1225,8 +1200,8 @@ el('btnDownloadDb').addEventListener('click', async ()=>{
   const r = await fetch('/api/database');
   const blob = await r.blob();
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = 'database_backup.json'; a.click();
-  URL.revokeObjectURL(a.href); showToast('Data JSON diunduh! ⬇️');
+  a.href = URL.createObjectURL(blob); a.download = 'prompthub-db.json'; a.click();
+  URL.revokeObjectURL(a.href); showToast('Database diunduh! ⬇️');
 });
 el('restoreFile').addEventListener('change', async evt=>{
   const f = evt.target.files[0]; if(!f) return;
@@ -1247,7 +1222,7 @@ el('btnPublish').addEventListener('click', ()=>{
     title,
     message: body,
     date: new Date().toLocaleDateString('id-ID',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}),
-    uploadedBy: { name: admin.name || 'Nathan', avatar: admin.avatar || '[https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f)' }
+    uploadedBy: { name: admin.name || 'Nathan', avatar: admin.avatar || 'https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f' }
   });
   if(phState.db.announcements.length > 10) phState.db.announcements.pop();
   persistDB(); renderAll(); renderAnnManager();
@@ -1264,7 +1239,7 @@ function renderAnnManager(){
     const date = a.date ?? fmtDate(a.createdAt);
     const au = a.uploadedBy || phState.db.admin || {};
     const aname = au.name || 'Admin';
-    const aav = au.avatar || '[https://ui-avatars.com/api/?name='+encodeURIComponent(aname)+'&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name='+encodeURIComponent(aname)+'&background=ffd43b&color=1b1b1f)';
+    const aav = au.avatar || 'https://ui-avatars.com/api/?name='+encodeURIComponent(aname)+'&background=ffd43b&color=1b1b1f';
     return '<div class="bubble t-'+(a.type||'info')+'" style="display:flex;align-items:flex-start;gap:10px">'+
       '<div style="flex:1"><span class="badge bg-'+(a.type||'info')+'">'+(a.type||'info')+'</span> <span class="b-date">'+esc(date)+'</span><h4>'+esc(a.title)+'</h4><p>'+esc(msg)+'</p>'+
       '<div class="b-author"><img src="'+esc(aav)+'" alt=""><span>'+esc(aname)+'</span></div></div>'+
@@ -1279,6 +1254,7 @@ window.deleteAnnouncement = function(id){
 
 /* sumber media pills */
 document.querySelectorAll('input[name="gmSrc"]').forEach(rd=>rd.addEventListener('change', ()=>{
+  const isFile = rd.value==='file' && rd.checked;
   const srcVal = document.querySelector('input[name="gmSrc"]:checked').value;
   el('boxFile').style.display = srcVal==='file' ? 'block':'none';
   el('boxUrl').style.display = srcVal==='url' ? 'block':'none';
@@ -1293,9 +1269,8 @@ async function uploadMedia(file){
   if(!d.success) throw new Error(d.message || 'Upload gagal');
   return d.url;
 }
-
-/* ================= WATERMARK ================= */
-let wmName = ''; 
+/* ================= WATERMARK (badge only) ================= */
+let wmName = ''; // default watermark (fallback)
 window.setWatermark = function(v){
   wmName = v;
   document.querySelectorAll('[data-wm]').forEach(b=>b.classList.toggle('on', b.dataset.wm===v));
@@ -1312,6 +1287,7 @@ function currentWmName(){
 }
 el('wmCustom').addEventListener('input', updateWmPreview);
 function wmForIndex(i){
+  // Per-media watermark list (dari textarea), urut; kosong => pakai default
   const list = (el('wmPerMedia').value||'').split(/[\n,]/).map(s=>s.trim()).filter(Boolean);
   if(list[i]) return list[i];
   return currentWmName();
@@ -1351,7 +1327,7 @@ el('btnSaveGm').addEventListener('click', async ()=>{
       mediaType: first.mediaType,
       access: el('gmAccess').value,
       prompt: promptText,
-      uploadedBy: { name: admin.name || 'Nathan', avatar: admin.avatar || '[https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f](https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f)' }
+      uploadedBy: { name: admin.name || 'Nathan', avatar: admin.avatar || 'https://ui-avatars.com/api/?name=Nathan&background=ffd43b&color=1b1b1f' }
     };
     if(phState.editId){
       const item = phState.db.gallery.find(g=>g.id===phState.editId);
