@@ -1,0 +1,39 @@
+# Secrets — JANGAN pernah commit
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Flask / runtime artifacts
+instance/
+.webassets-cache
+database.txt
+asset/
+uploads/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+*.log
