@@ -23,7 +23,7 @@ GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '').strip()
 # Konfigurasi MongoDB, Cloudinary, & WhatsApp
 MONGO_URI = os.environ.get('MONGO_URI', '').strip()
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL', '').strip()
-WA_NUMBER = os.environ.get('WA_NUMBER', '6281234567890').strip()
+WA_NUMBER = os.environ.get('WA_NUMBER', '6287860088834').strip()
 
 UPLOAD_FOLDER = 'asset'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp', 'mp4', 'webm', 'mov'}
