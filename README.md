@@ -41,7 +41,7 @@ Variabel yang diperlukan:
 | `SECRET_KEY` | ya | Secret key sesi Flask. |
 | `ADMIN_LOGIN_KEY` | ya | Password untuk login admin. |
 | `GEMINI_API_KEY` | ya | API key dari https://aistudio.google.com/app/apikey |
-| `GEMINI_MODEL` | tidak | Default `gemini-2.0-flash`. Alternatif: `gemini-1.5-flash`, `gemini-flash-latest`. |
+| `GEMINI_MODEL` | tidak | Default `gemini-3.8-flash`. Alternatif: `gemini-3.6-flash`, `gemini-flash-latest`. |
 | `MONGO_URI` | ya | Connection string MongoDB Atlas. |
 | `CLOUDINARY_URL` | ya | URL Cloudinary dari dashboard. |
 | `WA_NUMBER` | ya | Nomor WhatsApp admin (format internasional tanpa `+`). |
@@ -101,7 +101,7 @@ Jika kamu upgrade dari versi `database.txt`:
 ## Troubleshooting
 
 **"Gemini error (404): model no longer available"**
-Region/akun kamu tidak support model tersebut. Coba ganti `GEMINI_MODEL` di `.env` ke `gemini-1.5-flash` atau `gemini-flash-latest`.
+Region/akun kamu tidak support model tersebut. Coba ganti `GEMINI_MODEL` di `.env` ke `gemini-3.6-flash` atau `gemini-flash-latest`.
 
 **"User location is not supported for the API use"**
 Server kamu berada di region yang tidak didukung Gemini API. Deploy ke region US/EU/Asia-Pasifik yang didukung. Daftar region: https://ai.google.dev/available_regions
